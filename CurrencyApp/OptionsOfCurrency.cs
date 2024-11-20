@@ -14,7 +14,7 @@ namespace CurrencyApp
             ProcessStartInfo start = new ProcessStartInfo
             {
                 FileName = @"C:\Users\Thomas\AppData\Local\Programs\Python\Python312\python.exe", // Caminho do executável Python
-                Arguments = @"C:\Users\Thomas\Documents\GitHub\ProjectApiCotacao\BTCBRL.py", // Caminho completo do script BTCBRL.py
+                Arguments = @"C:\Users\Thomas\source\repos\CurrencyApp\CurrencyAppApiScriptsPy\ProjectApiCotacao\BTCBRL.py", // Caminho completo do script BTCBRL.py
                 RedirectStandardOutput = true,
                 UseShellExecute = false,
                 CreateNoWindow = true
@@ -35,7 +35,7 @@ namespace CurrencyApp
             ProcessStartInfo start = new ProcessStartInfo
             {
                 FileName = @"C:\Users\Thomas\AppData\Local\Programs\Python\Python312\python.exe", // Caminho do executável Python
-                Arguments = @"C:\Users\Thomas\Documents\GitHub\ProjectApiCotacao\EURBRL.py", // Caminho completo do script BTCBRL.py
+                Arguments = @"C:\Users\Thomas\source\repos\CurrencyApp\CurrencyAppApiScriptsPy\ProjectApiCotacao\EURBRL.py", // Caminho completo do script BTCBRL.py
                 RedirectStandardOutput = true,
                 UseShellExecute = false,
                 CreateNoWindow = true
@@ -55,7 +55,7 @@ namespace CurrencyApp
             ProcessStartInfo start = new ProcessStartInfo
             {
                 FileName = @"C:\Users\Thomas\AppData\Local\Programs\Python\Python312\python.exe", // Caminho do executável Python
-                Arguments = @"C:\Users\Thomas\Documents\GitHub\ProjectApiCotacao\USDBRL.py", // Caminho completo do script BTCBRL.py
+                Arguments = @"C:\Users\Thomas\source\repos\CurrencyApp\CurrencyAppApiScriptsPy\ProjectApiCotacao\USDBRL.py", // Caminho completo do script BTCBRL.py
                 RedirectStandardOutput = true,
                 UseShellExecute = false,
                 CreateNoWindow = true
