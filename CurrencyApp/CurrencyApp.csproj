@@ -55,6 +55,7 @@
   <ItemGroup>
     <Compile Include="BLL\ApiCurrency.cs" />
     <Compile Include="BLL\CalcCi.cs" />
+    <Compile Include="BLL\Charts.cs" />
     <Compile Include="FormCalcCI.cs">
       <SubType>Form</SubType>
     </Compile>
