@@ -87,5 +87,12 @@ namespace CurrencyApp
         {
             Application.Exit();
         }
+
+        private void buttonHome_Click(object sender, EventArgs e)
+        {
+            FormMenu f1 = new FormMenu();
+            f1.Show();
+            this.Close();
+        }
     }
 }

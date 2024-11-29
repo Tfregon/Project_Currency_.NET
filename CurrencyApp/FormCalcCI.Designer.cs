@@ -28,16 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.regularCIToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cumulativeCIToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBoxCumulativeCI = new System.Windows.Forms.GroupBox();
+            this.buttonBackToHome2 = new System.Windows.Forms.Button();
+            this.buttonExit2 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.labelMonthlyDepositCCI = new System.Windows.Forms.Label();
             this.textBoxMonthlyDeposit = new System.Windows.Forms.TextBox();
@@ -52,6 +54,8 @@
             this.labelDurationCCI = new System.Windows.Forms.Label();
             this.textBoxDurationCCI = new System.Windows.Forms.TextBox();
             this.groupBoxRegularCI = new System.Windows.Forms.GroupBox();
+            this.buttonBackToHome = new System.Windows.Forms.Button();
+            this.buttonExit = new System.Windows.Forms.Button();
             this.labelAmount = new System.Windows.Forms.Label();
             this.labelExDuration = new System.Windows.Forms.Label();
             this.textBoxAmountRCI = new System.Windows.Forms.TextBox();
@@ -63,20 +67,18 @@
             this.labelYearsDuration = new System.Windows.Forms.Label();
             this.textBoxDurationRCI = new System.Windows.Forms.TextBox();
             this.tabControlCompoundInterest = new System.Windows.Forms.TabControl();
-            this.tabPageRCI = new System.Windows.Forms.TabPage();
             this.tabPageCCI = new System.Windows.Forms.TabPage();
-            this.buttonExit = new System.Windows.Forms.Button();
-            this.buttonExit2 = new System.Windows.Forms.Button();
-            this.chartRCI = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chartCCI = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.tabPageRCI = new System.Windows.Forms.TabPage();
+            this.chartRCI = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.menuStrip1.SuspendLayout();
             this.groupBoxCumulativeCI.SuspendLayout();
             this.groupBoxRegularCI.SuspendLayout();
             this.tabControlCompoundInterest.SuspendLayout();
-            this.tabPageRCI.SuspendLayout();
             this.tabPageCCI.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chartRCI)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartCCI)).BeginInit();
+            this.tabPageRCI.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartRCI)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -88,7 +90,7 @@
             this.cumulativeCIToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(899, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1383, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -104,6 +106,7 @@
             // 
             // groupBoxCumulativeCI
             // 
+            this.groupBoxCumulativeCI.Controls.Add(this.buttonBackToHome2);
             this.groupBoxCumulativeCI.Controls.Add(this.buttonExit2);
             this.groupBoxCumulativeCI.Controls.Add(this.label7);
             this.groupBoxCumulativeCI.Controls.Add(this.labelMonthlyDepositCCI);
@@ -125,6 +128,26 @@
             this.groupBoxCumulativeCI.TabStop = false;
             this.groupBoxCumulativeCI.Text = "Cumulative Coumpound Interest";
             // 
+            // buttonBackToHome2
+            // 
+            this.buttonBackToHome2.Location = new System.Drawing.Point(81, 303);
+            this.buttonBackToHome2.Name = "buttonBackToHome2";
+            this.buttonBackToHome2.Size = new System.Drawing.Size(106, 44);
+            this.buttonBackToHome2.TabIndex = 15;
+            this.buttonBackToHome2.Text = "Home";
+            this.buttonBackToHome2.UseVisualStyleBackColor = true;
+            this.buttonBackToHome2.Click += new System.EventHandler(this.buttonBackToHome2_Click);
+            // 
+            // buttonExit2
+            // 
+            this.buttonExit2.Location = new System.Drawing.Point(11, 303);
+            this.buttonExit2.Name = "buttonExit2";
+            this.buttonExit2.Size = new System.Drawing.Size(51, 44);
+            this.buttonExit2.TabIndex = 14;
+            this.buttonExit2.Text = "Exit";
+            this.buttonExit2.UseVisualStyleBackColor = true;
+            this.buttonExit2.Click += new System.EventHandler(this.buttonExit2_Click);
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -140,9 +163,9 @@
             this.labelMonthlyDepositCCI.AutoSize = true;
             this.labelMonthlyDepositCCI.Location = new System.Drawing.Point(6, 226);
             this.labelMonthlyDepositCCI.Name = "labelMonthlyDepositCCI";
-            this.labelMonthlyDepositCCI.Size = new System.Drawing.Size(128, 20);
+            this.labelMonthlyDepositCCI.Size = new System.Drawing.Size(124, 20);
             this.labelMonthlyDepositCCI.TabIndex = 11;
-            this.labelMonthlyDepositCCI.Text = "Monthly deposit::";
+            this.labelMonthlyDepositCCI.Text = "Monthly deposit:";
             // 
             // textBoxMonthlyDeposit
             // 
@@ -166,7 +189,7 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(147, 196);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(131, 18);
+            this.label2.Size = new System.Drawing.Size(109, 15);
             this.label2.TabIndex = 10;
             this.label2.Text = "Number of months";
             // 
@@ -241,6 +264,7 @@
             // 
             // groupBoxRegularCI
             // 
+            this.groupBoxRegularCI.Controls.Add(this.buttonBackToHome);
             this.groupBoxRegularCI.Controls.Add(this.buttonExit);
             this.groupBoxRegularCI.Controls.Add(this.labelAmount);
             this.groupBoxRegularCI.Controls.Add(this.labelExDuration);
@@ -259,6 +283,26 @@
             this.groupBoxRegularCI.TabStop = false;
             this.groupBoxRegularCI.Text = "Regular Coumpound Interest";
             // 
+            // buttonBackToHome
+            // 
+            this.buttonBackToHome.Location = new System.Drawing.Point(86, 306);
+            this.buttonBackToHome.Name = "buttonBackToHome";
+            this.buttonBackToHome.Size = new System.Drawing.Size(106, 44);
+            this.buttonBackToHome.TabIndex = 12;
+            this.buttonBackToHome.Text = "Home";
+            this.buttonBackToHome.UseVisualStyleBackColor = true;
+            this.buttonBackToHome.Click += new System.EventHandler(this.buttonBackToHome_Click);
+            // 
+            // buttonExit
+            // 
+            this.buttonExit.Location = new System.Drawing.Point(16, 306);
+            this.buttonExit.Name = "buttonExit";
+            this.buttonExit.Size = new System.Drawing.Size(51, 44);
+            this.buttonExit.TabIndex = 11;
+            this.buttonExit.Text = "Exit";
+            this.buttonExit.UseVisualStyleBackColor = true;
+            this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
+            // 
             // labelAmount
             // 
             this.labelAmount.AutoSize = true;
@@ -274,7 +318,7 @@
             this.labelExDuration.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelExDuration.Location = new System.Drawing.Point(147, 196);
             this.labelExDuration.Name = "labelExDuration";
-            this.labelExDuration.Size = new System.Drawing.Size(131, 18);
+            this.labelExDuration.Size = new System.Drawing.Size(109, 15);
             this.labelExDuration.TabIndex = 10;
             this.labelExDuration.Text = "Number of months";
             // 
@@ -349,25 +393,13 @@
             // 
             // tabControlCompoundInterest
             // 
-            this.tabControlCompoundInterest.Controls.Add(this.tabPageRCI);
             this.tabControlCompoundInterest.Controls.Add(this.tabPageCCI);
+            this.tabControlCompoundInterest.Controls.Add(this.tabPageRCI);
             this.tabControlCompoundInterest.Location = new System.Drawing.Point(26, 23);
             this.tabControlCompoundInterest.Name = "tabControlCompoundInterest";
             this.tabControlCompoundInterest.SelectedIndex = 0;
-            this.tabControlCompoundInterest.Size = new System.Drawing.Size(845, 432);
+            this.tabControlCompoundInterest.Size = new System.Drawing.Size(1357, 774);
             this.tabControlCompoundInterest.TabIndex = 13;
-            // 
-            // tabPageRCI
-            // 
-            this.tabPageRCI.Controls.Add(this.chartRCI);
-            this.tabPageRCI.Controls.Add(this.groupBoxRegularCI);
-            this.tabPageRCI.Location = new System.Drawing.Point(4, 29);
-            this.tabPageRCI.Name = "tabPageRCI";
-            this.tabPageRCI.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageRCI.Size = new System.Drawing.Size(837, 399);
-            this.tabPageRCI.TabIndex = 0;
-            this.tabPageRCI.Text = "RCI";
-            this.tabPageRCI.UseVisualStyleBackColor = true;
             // 
             // tabPageCCI
             // 
@@ -376,71 +408,64 @@
             this.tabPageCCI.Location = new System.Drawing.Point(4, 29);
             this.tabPageCCI.Name = "tabPageCCI";
             this.tabPageCCI.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageCCI.Size = new System.Drawing.Size(837, 399);
+            this.tabPageCCI.Size = new System.Drawing.Size(1349, 741);
             this.tabPageCCI.TabIndex = 1;
             this.tabPageCCI.Text = "CCI";
             this.tabPageCCI.UseVisualStyleBackColor = true;
             // 
-            // buttonExit
+            // chartCCI
             // 
-            this.buttonExit.Location = new System.Drawing.Point(39, 306);
-            this.buttonExit.Name = "buttonExit";
-            this.buttonExit.Size = new System.Drawing.Size(106, 44);
-            this.buttonExit.TabIndex = 11;
-            this.buttonExit.Text = "Exit";
-            this.buttonExit.UseVisualStyleBackColor = true;
-            this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
+            chartArea1.Name = "ChartArea1";
+            this.chartCCI.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartCCI.Legends.Add(legend1);
+            this.chartCCI.Location = new System.Drawing.Point(370, 6);
+            this.chartCCI.Name = "chartCCI";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chartCCI.Series.Add(series1);
+            this.chartCCI.Size = new System.Drawing.Size(867, 732);
+            this.chartCCI.TabIndex = 13;
+            this.chartCCI.Text = "CCI";
             // 
-            // buttonExit2
+            // tabPageRCI
             // 
-            this.buttonExit2.Location = new System.Drawing.Point(28, 303);
-            this.buttonExit2.Name = "buttonExit2";
-            this.buttonExit2.Size = new System.Drawing.Size(106, 44);
-            this.buttonExit2.TabIndex = 14;
-            this.buttonExit2.Text = "Exit";
-            this.buttonExit2.UseVisualStyleBackColor = true;
-            this.buttonExit2.Click += new System.EventHandler(this.buttonExit2_Click);
+            this.tabPageRCI.Controls.Add(this.chartRCI);
+            this.tabPageRCI.Controls.Add(this.groupBoxRegularCI);
+            this.tabPageRCI.Location = new System.Drawing.Point(4, 29);
+            this.tabPageRCI.Name = "tabPageRCI";
+            this.tabPageRCI.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageRCI.Size = new System.Drawing.Size(1349, 741);
+            this.tabPageRCI.TabIndex = 0;
+            this.tabPageRCI.Text = "RCI";
+            this.tabPageRCI.UseVisualStyleBackColor = true;
             // 
             // chartRCI
             // 
-            chartArea3.Name = "ChartArea1";
-            this.chartRCI.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.chartRCI.Legends.Add(legend3);
+            chartArea2.Name = "ChartArea1";
+            this.chartRCI.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chartRCI.Legends.Add(legend2);
             this.chartRCI.Location = new System.Drawing.Point(352, 6);
             this.chartRCI.Name = "chartRCI";
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            this.chartRCI.Series.Add(series3);
-            this.chartRCI.Size = new System.Drawing.Size(479, 387);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chartRCI.Series.Add(series2);
+            this.chartRCI.Size = new System.Drawing.Size(873, 720);
             this.chartRCI.TabIndex = 12;
             this.chartRCI.Text = "RCI";
-            // 
-            // chartCCI
-            // 
-            chartArea4.Name = "ChartArea1";
-            this.chartCCI.ChartAreas.Add(chartArea4);
-            legend4.Name = "Legend1";
-            this.chartCCI.Legends.Add(legend4);
-            this.chartCCI.Location = new System.Drawing.Point(361, 6);
-            this.chartCCI.Name = "chartCCI";
-            series4.ChartArea = "ChartArea1";
-            series4.Legend = "Legend1";
-            series4.Name = "Series1";
-            this.chartCCI.Series.Add(series4);
-            this.chartCCI.Size = new System.Drawing.Size(470, 387);
-            this.chartCCI.TabIndex = 13;
-            this.chartCCI.Text = "CCI";
             // 
             // FormCalcCI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(899, 473);
+            this.ClientSize = new System.Drawing.Size(1383, 811);
             this.Controls.Add(this.tabControlCompoundInterest);
             this.Controls.Add(this.menuStrip1);
             this.Name = "FormCalcCI";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Compound Interest";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -449,10 +474,10 @@
             this.groupBoxRegularCI.ResumeLayout(false);
             this.groupBoxRegularCI.PerformLayout();
             this.tabControlCompoundInterest.ResumeLayout(false);
-            this.tabPageRCI.ResumeLayout(false);
             this.tabPageCCI.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chartRCI)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartCCI)).EndInit();
+            this.tabPageRCI.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chartRCI)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -495,5 +520,7 @@
         private System.Windows.Forms.Button buttonExit;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartRCI;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartCCI;
+        private System.Windows.Forms.Button buttonBackToHome;
+        private System.Windows.Forms.Button buttonBackToHome2;
     }
 }

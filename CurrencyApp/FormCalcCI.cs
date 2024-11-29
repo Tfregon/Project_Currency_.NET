@@ -92,5 +92,19 @@ namespace CurrencyApp
         {
             Application.Exit();
         }
+
+        private void buttonBackToHome_Click(object sender, EventArgs e)
+        {
+            FormMenu f1 = new FormMenu();
+            f1.Show();
+            this.Close();
+        }
+
+        private void buttonBackToHome2_Click(object sender, EventArgs e)
+        {
+            FormMenu f1 = new FormMenu();
+            f1.Show();
+            this.Close();
+        }
     }
 }
