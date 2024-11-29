@@ -3,10 +3,14 @@ C:\Users\Thomas\source\repos\CurrencyApp\CurrencyApp\bin\Debug\CurrencyApp.exe
 C:\Users\Thomas\source\repos\CurrencyApp\CurrencyApp\bin\Debug\CurrencyApp.pdb
 C:\Users\Thomas\source\repos\CurrencyApp\CurrencyApp\bin\Debug\Python.Runtime.dll
 C:\Users\Thomas\source\repos\CurrencyApp\CurrencyApp\obj\Debug\CurrencyApp.csproj.AssemblyReference.cache
-C:\Users\Thomas\source\repos\CurrencyApp\CurrencyApp\obj\Debug\CurrencyApp.Form1.resources
 C:\Users\Thomas\source\repos\CurrencyApp\CurrencyApp\obj\Debug\CurrencyApp.Properties.Resources.resources
 C:\Users\Thomas\source\repos\CurrencyApp\CurrencyApp\obj\Debug\CurrencyApp.csproj.GenerateResource.cache
 C:\Users\Thomas\source\repos\CurrencyApp\CurrencyApp\obj\Debug\CurrencyApp.csproj.CoreCompileInputs.cache
 C:\Users\Thomas\source\repos\CurrencyApp\CurrencyApp\obj\Debug\Currency.AC9A6686.Up2Date
 C:\Users\Thomas\source\repos\CurrencyApp\CurrencyApp\obj\Debug\CurrencyApp.exe
 C:\Users\Thomas\source\repos\CurrencyApp\CurrencyApp\obj\Debug\CurrencyApp.pdb
+C:\Users\Thomas\source\repos\CurrencyApp\CurrencyApp\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Thomas\source\repos\CurrencyApp\CurrencyApp\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Thomas\source\repos\CurrencyApp\CurrencyApp\obj\Debug\CurrencyApp.FormCurrency.resources
+C:\Users\Thomas\source\repos\CurrencyApp\CurrencyApp\obj\Debug\CurrencyApp.FormMenu.resources
+C:\Users\Thomas\source\repos\CurrencyApp\CurrencyApp\obj\Debug\CurrencyApp.FormCalcCI.resources
