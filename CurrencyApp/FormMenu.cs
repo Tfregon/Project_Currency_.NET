@@ -30,5 +30,12 @@ namespace CurrencyApp
             this.Hide();
             formCalcCI.Show();
         }
+
+        private void buttonLogin_Click(object sender, EventArgs e)
+        {
+            FormWallet formWallet = new FormWallet();
+            this.Hide();
+            formWallet.Show();
+        }
     }
 }

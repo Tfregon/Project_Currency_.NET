@@ -14,3 +14,8 @@ C:\Users\Thomas\source\repos\CurrencyApp\CurrencyApp\bin\Debug\Newtonsoft.Json.x
 C:\Users\Thomas\source\repos\CurrencyApp\CurrencyApp\obj\Debug\CurrencyApp.FormCurrency.resources
 C:\Users\Thomas\source\repos\CurrencyApp\CurrencyApp\obj\Debug\CurrencyApp.FormMenu.resources
 C:\Users\Thomas\source\repos\CurrencyApp\CurrencyApp\obj\Debug\CurrencyApp.FormCalcCI.resources
+C:\Users\Thomas\source\repos\CurrencyApp\CurrencyApp\bin\Debug\EntityFramework.dll
+C:\Users\Thomas\source\repos\CurrencyApp\CurrencyApp\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Thomas\source\repos\CurrencyApp\CurrencyApp\bin\Debug\EntityFramework.xml
+C:\Users\Thomas\source\repos\CurrencyApp\CurrencyApp\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Thomas\source\repos\CurrencyApp\CurrencyApp\obj\Debug\CurrencyApp.FormWallet.resources
