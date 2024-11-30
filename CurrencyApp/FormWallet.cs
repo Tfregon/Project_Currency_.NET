@@ -230,7 +230,20 @@ namespace CurrencyApp
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
+            
+            if (listBoxWalletName.SelectedItem == null)
+            {
+                MessageBox.Show("Please select a wallet from the list.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
+            // Obter o nome da wallet selecionada
+            string selectedWalletName = listBoxWalletName.SelectedItem.ToString();
+
+            // Deleta a Wallet
+            BLLWallet walletService = new BLLWallet();
+            int idToDelete = walletService.GetWalletIdByName(selectedWalletName);
+            walletService.DeleteWallet(idToDelete);
         }
 
         private void buttonAllInvestmentos_Click(object sender, EventArgs e)

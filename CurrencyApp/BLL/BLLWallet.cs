@@ -36,7 +36,15 @@ public class BLLWallet
         _dbContext.Wallets.Add(wallet);
         _dbContext.SaveChanges(); // Salva as alterações no banco
     }
-
+    public int GetWalletIdByName(string name)
+    {
+        var wallet = _dbContext.Wallets.FirstOrDefault(w => w.Name == name);
+        if (wallet != null)
+        {
+            return wallet.Id; // Retorna o ID da carteira encontrada
+        }
+        throw new Exception("Wallet not found with the specified name.");
+    }
     // Retorna todas as carteiras
     public List<Wallet> GetAllWallets()
     {
