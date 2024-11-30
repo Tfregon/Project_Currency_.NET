@@ -1,4 +1,5 @@
-﻿using CurrencyApp.DAL;
+﻿using CurrencyApp.BLL;
+using CurrencyApp.DAL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -179,48 +180,45 @@ namespace CurrencyApp
 
         private void buttonInsertRegister_Click(object sender, EventArgs e)
         {
+            if (listBoxInsertInfo.SelectedItem == null)
             {
-                if (listBoxInsertInfo.SelectedItem == null)
+                MessageBox.Show("Please select a wallet from the list.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Obter o nome da wallet selecionada
+            string selectedWalletName = listBoxInsertInfo.SelectedItem.ToString();
+
+            // Buscar a carteira pelo nome
+            BLLWallet walletService = new BLLWallet();
+            var wallet = walletService.GetWalletByName(selectedWalletName);
+
+            if (wallet != null)
+            {
+                try
                 {
-                    MessageBox.Show("Please select a wallet from the list.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
+                    // Coletar os valores adicionais do usuário
+                    decimal extraFixedExpenses = Convert.ToDecimal(textBoxInsertExpenses.Text);
+                    decimal extraFixedIncomes = Convert.ToDecimal(textBoxInsertIncomes.Text);
+                    decimal extraExtraExpenses = Convert.ToDecimal(textBoxInsertExtraEx.Text);
+                    decimal extraExtraIncomes = Convert.ToDecimal(textBoxInsertExtraInc.Text);
+                    decimal extraInvestment = Convert.ToDecimal(textBoxInsertInvest.Text);
+
+                    // Atualizar a carteira
+                    walletService.UpdateWallet(wallet.Id, extraFixedExpenses, extraFixedIncomes, extraExtraExpenses, extraExtraIncomes, extraInvestment);
+
+                    MessageBox.Show("Information added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-
-                // Obter o nome da wallet selecionada
-                string selectedWalletName = listBoxInsertInfo.SelectedItem.ToString();
-
-                // Buscar a carteira pelo nome
-                BLLWallet walletService = new BLLWallet();
-                var wallet = walletService.GetWalletByName(selectedWalletName);
-
-                if (wallet != null)
+                catch (Exception ex)
                 {
-                    try
-                    {
-                        // Coletar os valores adicionais do usuário
-                        decimal extraFixedExpenses = Convert.ToDecimal(textBoxInsertExpenses.Text);
-                        decimal extraFixedIncomes = Convert.ToDecimal(textBoxInsertIncomes.Text);
-                        decimal extraExtraExpenses = Convert.ToDecimal(textBoxInsertExtraEx.Text);
-                        decimal extraExtraIncomes = Convert.ToDecimal(textBoxInsertExtraInc.Text);
-                        decimal extraInvestment = Convert.ToDecimal(textBoxInsertInvest.Text);
-
-                        // Atualizar a carteira
-                        walletService.UpdateWallet(wallet.Id,wallet.Name,extraFixedExpenses, extraFixedIncomes, extraExtraExpenses, extraExtraIncomes, extraInvestment);
-
-                        MessageBox.Show("Information added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Error adding information: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Wallet not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Error adding information: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+            else
+            {
+                MessageBox.Show("Wallet not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
-
         private void buttonShowInfoHome_Click(object sender, EventArgs e)
         {
             FormMenu f1 = new FormMenu();
@@ -230,20 +228,42 @@ namespace CurrencyApp
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
-            
             if (listBoxWalletName.SelectedItem == null)
             {
                 MessageBox.Show("Please select a wallet from the list.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            // Obter o nome da wallet selecionada
-            string selectedWalletName = listBoxWalletName.SelectedItem.ToString();
+            try
+            {
+                // Obter o nome da wallet selecionada
+                string selectedWalletName = listBoxWalletName.SelectedItem.ToString();
 
-            // Deleta a Wallet
-            BLLWallet walletService = new BLLWallet();
-            int idToDelete = walletService.GetWalletIdByName(selectedWalletName);
-            walletService.DeleteWallet(idToDelete);
+                // Inicializar o serviço de Wallet
+                BLLWallet walletService = new BLLWallet();
+
+                // Buscar a carteira pelo nome
+                var wallet = walletService.GetWalletByName(selectedWalletName);
+
+                if (wallet != null)
+                {
+                    // Deletar a carteira
+                    walletService.DeleteWallet(wallet.Name);
+
+                    // Atualizar o ListBox
+                    buttonLoadList_Click(sender, e);
+
+                    MessageBox.Show("Wallet deleted successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Wallet not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error deleting wallet: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void buttonAllInvestmentos_Click(object sender, EventArgs e)

@@ -28,4 +28,51 @@ namespace CurrencyApp.DAL
         public decimal ExtraIncomes { get; set; } // Receitas extras
         public decimal Investment { get; set; } // Investimento do mês
     }
+    public class DALWallet
+    {
+        private readonly CurrencyDbContext _dbContext;
+
+        public DALWallet()
+        {
+            _dbContext = new CurrencyDbContext();
+        }
+
+        public void AddWallet(Wallet wallet)
+        {
+            _dbContext.Wallets.Add(wallet);
+            _dbContext.SaveChanges();
+        }
+
+        public Wallet GetWalletById(int id)
+        {
+            return _dbContext.Wallets.FirstOrDefault(w => w.Id == id);
+        }
+
+        public Wallet GetWalletByName(string name)
+        {
+            return _dbContext.Wallets.FirstOrDefault(w => w.Name == name);
+        }
+
+        public List<Wallet> GetAllWallets()
+        {
+            return _dbContext.Wallets.ToList();
+        }
+
+        public void UpdateWallet(Wallet wallet)
+        {
+            _dbContext.Entry(wallet).State = System.Data.Entity.EntityState.Modified;
+            _dbContext.SaveChanges();
+        }
+
+        public void DeleteWallet(Wallet wallet)
+        {
+            _dbContext.Wallets.Remove(wallet);
+            _dbContext.SaveChanges();
+        }
+
+        public decimal GetTotalInvestments()
+        {
+            return _dbContext.Wallets.Sum(w => w.Investment);
+        }
+    }
 }

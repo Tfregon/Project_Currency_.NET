@@ -10,85 +10,71 @@ using CurrencyApp.DAL; // Para acessar o contexto e as entidades
 //using global::CurrencyApp.DAL;
 
 
-public class BLLWallet
+namespace CurrencyApp.BLL
 {
-    private readonly CurrencyDbContext _dbContext;
-
     // Construtor que inicializa o contexto
-    public BLLWallet()
+    public class BLLWallet
     {
-        _dbContext = new CurrencyDbContext();
-    }
+        private readonly DALWallet _dalWallet;
 
-    // Adiciona uma nova carteira
-    public void AddWallet(string name, decimal fixedExpenses, decimal fixedIncomes, decimal extraExpenses, decimal extraIncomes, decimal investment)
-    {
-        var wallet = new Wallet
+        public BLLWallet()
         {
-            Name = name,
-            FixedExpenses = fixedExpenses,
-            FixedIncomes = fixedIncomes,
-            ExtraExpenses = extraExpenses,
-            ExtraIncomes = extraIncomes,
-            Investment = investment
-        };
-
-        _dbContext.Wallets.Add(wallet);
-        _dbContext.SaveChanges(); // Salva as alterações no banco
-    }
-    public int GetWalletIdByName(string name)
-    {
-        var wallet = _dbContext.Wallets.FirstOrDefault(w => w.Name == name);
-        if (wallet != null)
-        {
-            return wallet.Id; // Retorna o ID da carteira encontrada
+            _dalWallet = new DALWallet();
         }
-        throw new Exception("Wallet not found with the specified name.");
-    }
-    // Retorna todas as carteiras
-    public List<Wallet> GetAllWallets()
-    {
-        return _dbContext.Wallets.ToList(); // Retorna todas as carteiras do banco
-    }
-    // Busca uma carteira pelo nome
-    public Wallet GetWalletByName(string name)
-    {
-        return _dbContext.Wallets.FirstOrDefault(w => w.Name == name);
-    }
 
-    // Atualiza uma carteira existente
-    public void UpdateWallet(int id, string name, decimal fixedExpenses, decimal fixedIncomes, decimal extraExpenses, decimal extraIncomes, decimal investment)
-    {
-        var wallet = _dbContext.Wallets.FirstOrDefault(w => w.Id == id);
-        if (wallet != null)
+        public void AddWallet(string name, decimal fixedExpenses, decimal fixedIncomes, decimal extraExpenses, decimal extraIncomes, decimal investment)
         {
-            wallet.Name = name;
-            wallet.FixedExpenses += fixedExpenses;
-            wallet.FixedIncomes += fixedIncomes;
-            wallet.ExtraExpenses += extraExpenses;
-            wallet.ExtraIncomes += extraIncomes;
-            wallet.Investment += investment;
+            var wallet = new Wallet
+            {
+                Name = name,
+                FixedExpenses = fixedExpenses,
+                FixedIncomes = fixedIncomes,
+                ExtraExpenses = extraExpenses,
+                ExtraIncomes = extraIncomes,
+                Investment = investment
+            };
 
-            _dbContext.SaveChanges(); // Salva as alterações
+            _dalWallet.AddWallet(wallet);
         }
-    }
 
-    // Deleta uma carteira
-    public void DeleteWallet(int id)
-    {
-        var wallet = _dbContext.Wallets.FirstOrDefault(w => w.Id == id);
-        if (wallet != null)
+        public Wallet GetWalletByName(string name)
         {
-            _dbContext.Wallets.Remove(wallet); // Remove a carteira
-            _dbContext.SaveChanges(); // Salva as alterações
+            return _dalWallet.GetWalletByName(name);
         }
-    }
 
-    
-    // Calcula o total de investimentos de todas as carteiras
-    public decimal GetTotalInvestments()
-    {
-        return _dbContext.Wallets.Sum(w => w.Investment); // Soma os investimentos de todas as carteiras
+        public List<Wallet> GetAllWallets()
+        {
+            return _dalWallet.GetAllWallets();
+        }
+
+        public void UpdateWallet(int id, decimal fixedExpenses, decimal fixedIncomes, decimal extraExpenses, decimal extraIncomes, decimal investment)
+        {
+            var wallet = _dalWallet.GetWalletById(id);
+            if (wallet != null)
+            {
+                wallet.FixedExpenses += fixedExpenses;
+                wallet.FixedIncomes += fixedIncomes;
+                wallet.ExtraExpenses += extraExpenses;
+                wallet.ExtraIncomes += extraIncomes;
+                wallet.Investment += investment;
+
+                _dalWallet.UpdateWallet(wallet);
+            }
+        }
+
+        public void DeleteWallet(string name)
+        {
+            var wallet = _dalWallet.GetWalletByName(name);
+            if (wallet != null)
+            {
+                _dalWallet.DeleteWallet(wallet);
+            }
+        }
+
+        public decimal GetTotalInvestments()
+        {
+            return _dalWallet.GetTotalInvestments();
+        }
     }
 }
 
